@@ -1,0 +1,60 @@
+{
+  "name": "arkstats-reporter",
+  "description": "ArkStats Reporting Node",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./app.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "dependencies": {
+    "async": "^1.0.0",
+    "chalk": "^1.0.0",
+    "debounce": "1.0.0",
+    "debug": "2.2.0",
+    "lodash": "4.1.0",
+    "primus": "4.0.5",
+    "primus-emit": "1.0.0",
+    "primus-spark-latency": "0.1.1",
+    "ws": "^1.0.1"
+  },
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [
+    "Ark",
+    "reporting",
+    "network",
+    "node",
+    "stats"
+  ],
+  "authors": [
+    {
+      "name": "Marian Oancea",
+      "email": "marian@ethdev.com",
+      "url": "https://github.com/cubedro",
+      "description": "Initial creator of this software made to work on the top of ethereum network"
+    },
+    {
+      "name": "karek314",
+      "email": "karek314@protionmail.com",
+      "url": "https://github.com/karek314",
+      "description": "Forked and adapted for Lisk Network"
+    },
+    {
+      "name": "dafty",
+      "email": "dafty235@gmail.com",
+      "url": "",
+      "description": "Forked and adapted for the Ark Network"
+    }
+  ],
+  "license": "LGPL-3.0"
+}

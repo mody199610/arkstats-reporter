@@ -1,0 +1,26 @@
+[
+  {
+    "name"              : "arkstats-reporter",
+    "script"            : "app.js",
+    "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+    "merge_logs"        : false,
+    "watch"             : false,
+    "max_restarts"      : 20,
+    "exec_interpreter"  : "node",
+    "exec_mode"         : "fork_mode",
+    "env":
+    {
+      "NODE_ENV"        : "production",
+      "RPC_HOST"        : "localhost",
+      "RPC_PORT"        : "4001",
+      "LISTENING_PORT"  : "4001",
+      "INSTANCE_NAME"   : "",
+      "CONTACT_DETAILS" : "",
+      "NETWORK_MODE"    : "main",
+      "WS_SERVER"       : "",
+      "WS_SECRET"       : "",
+      "IS_FORGING"      : "no",
+      "VERBOSITY"       : 2
+    }
+  }
+]
