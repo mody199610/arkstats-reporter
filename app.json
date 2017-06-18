@@ -11,16 +11,16 @@
     "env":
     {
       "NODE_ENV"        : "production",
-      "RPC_HOST"        : "localhost",
-      "RPC_PORT"        : "4001",
-      "LISTENING_PORT"  : "4001",
+      "RPC_HOST"        : "",
+      "RPC_PORT"        : "",
+      "LISTENING_PORT"  : "",
       "INSTANCE_NAME"   : "",
       "CONTACT_DETAILS" : "",
-      "NETWORK_MODE"    : "main",
-      "WS_SERVER"       : "",
-      "WS_SECRET"       : "",
-      "IS_FORGING"      : "no",
-      "VERBOSITY"       : 2
+      "NETWORK_MODE"    : "mainnet",
+      "WS_SERVER"       : "http://arkstats.net:2095",
+      "WS_SECRET"       : "test",
+      "VERBOSITY"       : 3,
+      "REPORTERVER"     : "1.0.0"
     }
   }
 ]
