@@ -107,18 +107,38 @@ echo "Start a direct message with dafty on the ArkEcosystem Slack to get the sec
     read -e -r -p ": " WS_SECRET
     sed -i "/.*WS_SECRET.*/c\ \ \ \ \ \ \ \"WS_SECRET\"\ \ \ \ \ \ :\ \"$WS_SECRET\"," app.json
 
-success "Configuration complete!"
-sleep 1
-
-heading "If you have made a mistake with any of the details above, run this script again."
-echo
-echo
-echo
-heading "${cyan} Please start ArkStats reporter by typing ${bold}pm2 start app.json${reset}"
-heading "${cyan}Check the status of ArkStats by typing ${bold}pm2 log${reset}"
-echo
-echo
-echo
-heading "This script will now exit..."
-
+success "Configuration complete! Starting ArkStats for the first time..."
 sleep 3
+
+pm2 stop all
+pm2 delete all
+pm2 flush
+pm2 unstartup
+sleep 3
+clear
+
+pm2 start app.json
+sleep 3
+clear
+
+success "Installing ArkStats on boot..."
+sleep 3
+
+sudo pm2 startup
+pm2 save
+sleep 6
+clear
+
+pm2 status
+echo
+echo
+echo
+success "Installation successful! ArkStats will now start on boot."
+success "If you have made a mistake with any of the details above, run this script again."
+echo "${cyan}Check the status of ArkStats anytime by typing ${bold}pm2 log${reset}"
+echo
+echo
+heading "Thanks for installing ArkStats. For bugs, questions or comments, please message dafty on Slack!"
+echo "This script will now exit..."
+
+sleep 10
