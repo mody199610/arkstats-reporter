@@ -112,9 +112,11 @@ sleep 1
 
 heading "If you have made a mistake with any of the details above, run this script again."
 echo
-echo "${cyan} Please start ArkStats reporter by typing ${bold}pm2 start app.json${reset}"
 echo
-echo "${cyan}Check the status of ArkStats by typing ${bold}pm2 log${reset}"
+echo
+heading "${cyan} Please start ArkStats reporter by typing ${bold}pm2 start app.json${reset}"
+heading "${cyan}Check the status of ArkStats by typing ${bold}pm2 log${reset}"
+echo
 echo
 echo
 heading "This script will now exit..."
