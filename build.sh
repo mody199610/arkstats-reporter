@@ -113,7 +113,6 @@ sleep 3
 pm2 stop all
 pm2 delete all
 pm2 flush
-pm2 unstartup
 sleep 3
 clear
 
@@ -121,20 +120,22 @@ pm2 start app.json
 sleep 3
 clear
 
-success "Installing ArkStats on boot..."
-sleep 3
+#success "Installing ArkStats on boot..."
+#sleep 3
 
-sudo pm2 startup
-pm2 save
-sleep 6
+#sudo pm2 startup
+#pm2 save
+#sleep 6
 clear
 
 pm2 status
 echo
 echo
 echo
-success "Installation successful! ArkStats will now start on boot."
+success "Installation successful!"
 success "If you have made a mistake with any of the details above, run this script again."
+echo
+echo "${cyan}Please start ArkStats by typing ${bold}pm2 start app.json${reset}"
 echo "${cyan}Check the status of ArkStats anytime by typing ${bold}pm2 log${reset}"
 echo
 echo
