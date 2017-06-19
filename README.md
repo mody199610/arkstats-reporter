@@ -72,6 +72,9 @@ To check the logs:
 ```sh
 pm2 logs arkstats-reporter
 ```
+# License
+Licensed under the [GPLv3 License](https://github.com/dafty-1/arkstats-reporter/blob/master/LICENSE)
+
 # Links
 - [ArkStats Server](https://arkstats.net)
 - [Mainnet Block Explorer](https://explorer.dafty.net)
