@@ -23,11 +23,11 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/dafty-1/arkstats-reporter.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/dafty-1/arkstats-reporter",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/dafty-1/arkstats-reporter/issues"
   },
   "keywords": [
     "Ark",
@@ -52,7 +52,7 @@
     {
       "name": "dafty",
       "email": "dafty235@gmail.com",
-      "url": "",
+      "url": "https://github.com/dafty-1",
       "description": "Forked and adapted for the Ark Network"
     }
   ],
