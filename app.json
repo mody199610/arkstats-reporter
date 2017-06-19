@@ -18,7 +18,7 @@
       "CONTACT_DETAILS" : "",
       "NETWORK_MODE"    : "mainnet",
       "WS_SERVER"       : "http://arkstats.net:2095",
-      "WS_SECRET"       : "test",
+      "WS_SECRET"       : "",
       "VERBOSITY"       : 3,
       "REPORTERVER"     : "1.0.0"
     }
