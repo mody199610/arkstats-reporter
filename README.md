@@ -8,6 +8,7 @@ The arkstats-server is currently in development and will be released in a separa
 ![ArkStats Server](https://github.com/dafty-1/arkstats-reporter/blob/master/ArkStatsReporter.png?raw=true)
 
 # Dependencies
+- git
 - [ark-node](https://github.com/ArkEcosystem/ark-node)
 - npm
 - nodejs
@@ -20,9 +21,10 @@ Clone the arkstats-reporter release branch and run the [interactive build script
 
 **Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user - the installation script will ask you for sudo privileges.**
 ```sh
-$ git clone -b release https://github.com/dafty-1/arkstats-reporter.git
-$ cd arkstats-reporter/
-$ bash build.sh
+sudo apt-get install git
+git clone -b release https://github.com/dafty-1/arkstats-reporter.git
+cd arkstats-reporter/
+bash build.sh
 ```
 Follow the on-screen instructions to install arkstats-reporter and configure it to connect to the ArkStats server. For example:
 ```
