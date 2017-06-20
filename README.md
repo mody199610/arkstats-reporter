@@ -34,7 +34,7 @@ Follow the on-screen instructions to install arkstats-reporter and configure it 
  This is usually 4001
  : 4001
  
---- seveal steps omitted ---
+--- several steps omitted ---
 
 ==> Configuration complete! Starting ArkStats for the first time...
 ```
@@ -42,6 +42,9 @@ Follow the on-screen instructions to install arkstats-reporter and configure it 
 Alternatively, you can edit the `RPC_HOST`, `RPC_PORT`, `LISTENING_PORT`, `INSTANCE_NAME`, `CONTACT_DETAILS` and `WS_SECRET` values directly in [app.json](https://github.com/dafty-1/arkstats-reporter/blob/master/app.json) if you do not want to use the installation script.
 
 **Note: You must obtain the secret token in order to authenticate with ArkStats server. Please send [dafty](https://arkecosystem.slack.com/messages/@dafty/) a message, or ask around in the ArkEcosystem Slack to get your secret token.**
+
+# Installation on Docker
+A Docker image containing an ark-node instance and arkstats-reporter will be available soon.
 
 # Running the reporter
 To start the reporter:
