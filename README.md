@@ -20,7 +20,6 @@ Ensure that [ark-node](https://github.com/ArkEcosystem/ark-node) is installed, r
 Clone the arkstats-reporter release branch and run the [interactive build script](https://github.com/dafty-1/arkstats-reporter/blob/master/build.json).
 
 ```sh
-sudo su - ark # Login to a user (do not use root)
 sudo apt-get install git
 git clone -b release https://github.com/dafty-1/arkstats-reporter.git
 cd arkstats-reporter/
