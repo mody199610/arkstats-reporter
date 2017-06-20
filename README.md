@@ -16,9 +16,9 @@ The arkstats-server is currently in development and will be released in a separa
 # Installation on Ubuntu Server
 Ensure that [ark-node](https://github.com/ArkEcosystem/ark-node) is installed, running, and that the API (port 4001 by default) is open and reachable from your server. For instructions on setting up an Ark node, please [refer to this blog post](https://blog.ark.io/how-to-setup-a-node-for-ark-and-a-basic-cheat-sheet-4f82910719da).
 
-Clone the arkstats-reporter release branch and run the [build.sh]interactive build script.
+Clone the arkstats-reporter release branch and run the [interactive build script]((https://github.com/dafty-1/arkstats-reporter/blob/master/build.json).
 
-**Note:** You must clone and install arkstats-reporter as a regular user. Do not run as the root user - the installation script will ask you for sudo privileges.
+**Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user - the installation script will ask you for sudo privileges.**
 ```sh
 $ git clone -b release https://github.com/dafty-1/arkstats-reporter.git
 $ cd arkstats-reporter/
@@ -34,24 +34,17 @@ Follow the on-screen instructions to install arkstats-reporter and configure it 
  This is usually 4001
  : 4001
  
- ==> Enter a username to identify your node, without quotes, followed by ENTER.
- This can be a delegate name, Ark address or Slack username
- : dafty
-
- ==> Enter an email address or website for your node, without quotes, followed by ENTER.
- This is not required but can be helpful for other users
- : dafty235@gmail.com
-
- ==> Enter the secret token used to authenticate with the server, without quotes, followed by ENTER.
- Start a direct message with dafty on the ArkEcosystem Slack to get the secret token
- : Ask dafty on Slack for secret token
+--- several steps omitted ---
 
 ==> Configuration complete! Starting ArkStats for the first time...
 ```
 
 Alternatively, you can edit the `RPC_HOST`, `RPC_PORT`, `LISTENING_PORT`, `INSTANCE_NAME`, `CONTACT_DETAILS` and `WS_SECRET` values directly in [app.json](https://github.com/dafty-1/arkstats-reporter/blob/master/app.json) if you do not want to use the installation script.
 
-**Note:** You must obtain the secret token in order to authenticate with ArkStats server. Please send [dafty](https://arkecosystem.slack.com/messages/@dafty/) a message or ask around in the ArkEcosystem Slack to get your auth token.
+**Note: You must obtain the secret token in order to authenticate with ArkStats server. Please send [dafty](https://arkecosystem.slack.com/messages/@dafty/) a message, or ask around in the ArkEcosystem Slack to get your secret token.**
+
+# Installation on Docker
+A Docker image containing an ark-node instance and arkstats-reporter will be available soon.
 
 # Running the reporter
 To start the reporter:
@@ -73,7 +66,7 @@ To check the logs:
 pm2 logs arkstats-reporter
 ```
 # License
-Licensed under the [GPLv3 License](https://github.com/dafty-1/arkstats-reporter/blob/master/LICENSE)
+Licensed under the [GPLv3 License](https://github.com/dafty-1/arkstats-reporter/blob/master/LICENSE).
 
 # Links
 - [ArkStats Server](https://arkstats.net)
