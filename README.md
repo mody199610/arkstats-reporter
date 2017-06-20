@@ -19,13 +19,16 @@ Ensure that [ark-node](https://github.com/ArkEcosystem/ark-node) is installed, r
 
 Clone the arkstats-reporter release branch and run the [interactive build script](https://github.com/dafty-1/arkstats-reporter/blob/master/build.json).
 
-**Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user - the installation script will ask you for sudo privileges.**
 ```sh
+sudo su - ark # Login to a user (do not use root)
 sudo apt-get install git
 git clone -b release https://github.com/dafty-1/arkstats-reporter.git
 cd arkstats-reporter/
 bash build.sh
 ```
+
+**Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user - the installation script will ask you for sudo privileges.**
+
 Follow the on-screen instructions to install arkstats-reporter and configure it to connect to the ArkStats server. For example:
 ```
  ==> Enter the IP address of your Ark Node installation, without quotes, followed by ENTER.
