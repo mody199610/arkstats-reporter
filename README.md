@@ -17,7 +17,7 @@ The arkstats-server is currently in development and will be released in a separa
 # Installation on Ubuntu Server
 Ensure that [ark-node](https://github.com/ArkEcosystem/ark-node) is installed, running, and that the API (port 4001 by default) is open and reachable from your server. For instructions on setting up an Ark node, please [refer to this blog post](https://blog.ark.io/how-to-setup-a-node-for-ark-and-a-basic-cheat-sheet-4f82910719da).
 
-Clone the arkstats-reporter release branch and run the [interactive build script](https://github.com/dafty-1/arkstats-reporter/blob/master/build.json).
+Clone the arkstats-reporter release branch and run the [interactive build script](https://github.com/dafty-1/arkstats-reporter/blob/master/build.sh).
 
 ```sh
 sudo apt-get install git
@@ -26,7 +26,7 @@ cd arkstats-reporter/
 bash build.sh
 ```
 
-**Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user - the installation script will ask you for sudo privileges.**
+**Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user.**
 
 Follow the on-screen instructions to install arkstats-reporter and configure it to connect to the ArkStats server. For example:
 ```
