@@ -110,6 +110,8 @@ echo "Start a direct message with dafty on the ArkEcosystem Slack to get the sec
 success "Configuration complete! Starting ArkStats for the first time..."
 sleep 3
 
+NODE_VER=`node -v`
+sudo env PATH=$PATH:/home/ark/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 unstartup systemd -u $USER --hp /home/$USER
 pm2 stop all
 pm2 delete all
 pm2 flush
@@ -120,12 +122,12 @@ pm2 start app.json
 sleep 3
 clear
 
-#success "Installing ArkStats on boot..."
-#sleep 3
+success "Installing ArkStats on boot..."
+sleep 3
 
-#sudo pm2 startup
-#pm2 save
-#sleep 6
+sudo env PATH=$PATH:/home/$USER/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
+pm2 save
+
 clear
 
 pm2 status
@@ -133,13 +135,12 @@ echo
 echo
 echo
 success "Installation successful!"
-success "If you have made a mistake with any of the details above, run this script again."
+success "If you have made a mistake with any of the details, run this script again."
 echo
-echo "${cyan}Please start ArkStats by typing ${bold}pm2 start app.json${reset}"
-echo "${cyan}Check the status of ArkStats anytime by typing ${bold}pm2 log${reset}"
+echo "${cyan}ArkStats is running and will be restarted automatically on boot.${reset}"
+echo "${cyan}Check the status by typing ${bold}pm2 status${reset} or view the logs by typing ${bold}pm2 log${reset}."
 echo
-echo
-heading "Thanks for installing ArkStats. For bugs, questions or comments, please message dafty on Slack!"
+heading "For bugs, questions or comments, please message dafty on Slack!"
 echo "This script will now exit..."
 
-sleep 10
+sleep 3
