@@ -77,7 +77,7 @@ if ! grep -q "\"RPC_HOST\"        : \"\"," app.json; then
     then
         heading "Pulling latest configuration file..."
         echo
-        wget https://raw.githubusercontent.com/dafty-1/arkstats-reporter/master/app.json -O app.json
+        wget https://raw.githubusercontent.com/dafty-1/arkstats-reporter/master/app-default.json -O app.json
     fi
 fi
 
