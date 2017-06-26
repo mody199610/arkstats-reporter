@@ -69,6 +69,11 @@ echo
 sleep 1
 clear
 
+if [ ! -f app.json ]; then
+    heading "Pulling latest configuration file..."
+    wget https://raw.githubusercontent.com/dafty-1/arkstats-reporter/master/app-default.json -O app.json
+fi
+
 if ! grep -q "\"RPC_HOST\"        : \"\"," app.json; then
     error "ArkStats has already been configured (username, secret key, etc). Would you like to reconfigure it? [y/N]."
     echo "If you are updating ArkStats, this is usually not required."
