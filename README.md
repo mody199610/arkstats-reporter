@@ -47,6 +47,14 @@ Alternatively, you can edit the `RPC_HOST`, `RPC_PORT`, `LISTENING_PORT`, `INSTA
 
 **Note: You must obtain the secret token in order to authenticate with ArkStats server. Please send [dafty](https://arkecosystem.slack.com/messages/@dafty/) a message, or ask around in the ArkEcosystem Slack to get your secret token.**
 
+# Updating
+Simply pull the latest revision and re-run the build script. You will be asked if you want to keep your existing configuration.
+```sh
+cd arkstats-reporter/
+git pull
+bash build.sh
+```
+
 # Installation on Docker
 A Docker image containing an ark-node instance and arkstats-reporter will be available soon.
 
