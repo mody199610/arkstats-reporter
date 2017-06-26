@@ -28,21 +28,6 @@ bash build.sh
 
 **Note: You must clone and install arkstats-reporter as a regular user. Do not run as the root user.**
 
-Follow the on-screen instructions to install arkstats-reporter and configure it to connect to the ArkStats server. For example:
-```
- ==> Enter the IP address of your Ark Node installation, without quotes, followed by ENTER.
- This is usually localhost
- : localhost
- 
- ==> Enter the port of your Ark Node installation, without quotes, followed by ENTER.
- This is usually 4001
- : 4001
- 
---- several steps omitted ---
-
-==> Configuration complete! Starting ArkStats for the first time...
-```
-
 Alternatively, you can edit the `RPC_HOST`, `RPC_PORT`, `LISTENING_PORT`, `INSTANCE_NAME`, `CONTACT_DETAILS` and `WS_SECRET` values directly in [app.json](https://github.com/dafty-1/arkstats-reporter/blob/master/app.json) if you do not want to use the installation script.
 
 **Note: You must obtain the secret token in order to authenticate with ArkStats server. Please send [dafty](https://arkecosystem.slack.com/messages/@dafty/) a message, or ask around in the ArkEcosystem Slack to get your secret token.**
