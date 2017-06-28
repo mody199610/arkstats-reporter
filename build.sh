@@ -125,8 +125,11 @@ fi
 success "Configuration complete! Starting ArkStats..."
 sleep 3
 
+
 NODE_VER=`node -v`
 sudo env PATH=$PATH:/home/ark/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 unstartup systemd -u $USER --hp /home/$USER
+pm2 stop all &> /dev/null
+sudo chown -R $USER:$USER /home/$USER/.pm2
 pm2 stop all
 pm2 delete all
 pm2 flush
