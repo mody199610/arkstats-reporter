@@ -37,20 +37,14 @@ sleep 1
 
 heading "Installing dependencies..."
 echo
-sudo apt-get install -y software-properties-common build-essential git unzip wget nodejs npm ntp cloud-utils
+sudo apt-get install -y software-properties-common build-essential git unzip wget ntp cloud-utils
 success "Dependencies installed."
-sleep 1
-
-heading "Setting up path..."
-echo
-[[ ! -f /usr/bin/node ]] && sudo ln -s /usr/bin/nodejs /usr/bin/node
-success "Path set."
 sleep 1
 
 heading "Installing npm & pm2..."
 echo
-sudo npm install
-sudo npm install pm2 -g
+npm install
+npm install pm2 -g
 success "Installed OK."
 
 heading "Adding ntp time update to cronjob..."
@@ -127,9 +121,17 @@ sleep 3
 
 
 NODE_VER=`node -v`
+
+# unstartup pre 1.1.4
 sudo env PATH=$PATH:/home/ark/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 unstartup systemd -u $USER --hp /home/$USER
+
+# unstartup post 1.1.4
+sudo env PATH=$PATH:/home/$USER/.nvm/versions/node/$NODE_VER/bin /home/$USER/.nvm/versions/node/$NODE_VER/lib/node_modules/pm2/bin/pm2 unstartup systemd -u $USER --hp /home/$USER
+
+# belt and braces for pre 1.1.4
 pm2 stop all &> /dev/null
 sudo chown -R $USER:$USER /home/$USER/.pm2
+
 pm2 stop all
 pm2 delete all
 pm2 flush
@@ -143,7 +145,7 @@ clear
 success "Installing ArkStats on boot..."
 sleep 3
 
-sudo env PATH=$PATH:/home/$USER/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
+sudo env PATH=$PATH:/home/$USER/.nvm/versions/node/$NODE_VER/bin /home/$USER/.nvm/versions/node/$NODE_VER/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
 pm2 save
 
 sleep 5
