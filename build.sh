@@ -25,7 +25,7 @@ error()
 	echo "${red}==>${bold} $1${reset}"
 }
 
-heading "Installing arkstats-reporter-1.0.0..."
+heading "Installing arkstats-reporter-1.2.0..."
 
 heading "Updating system. Enter your sudo password if prompted..."
 echo
@@ -34,6 +34,10 @@ sudo apt-get upgrade -y
 sudo apt-get install -y software-properties-common
 success "System is up to date."
 sleep 1
+
+heading "Updating ArkStats module..."
+echo
+git pull
 
 heading "Installing dependencies..."
 echo
@@ -102,8 +106,13 @@ if grep -q "\"RPC_HOST\"        : \"\"," app.json; then
     
         read -e -r -p ": " INSTANCE_NAME
         sed -i "/.*INSTANCE_NAME.*/c\ \ \ \ \ \ \"INSTANCE_NAME\"\ \ \ :\ \"$INSTANCE_NAME\"," app.json
+
+    heading "Enter a URL to your delegate proposal or website, without quotes, followed by ENTER."
     
-    heading "Enter an email address or website for your node, without quotes, followed by ENTER."
+        read -e -r -p ": " PROPOSAL
+        sed -i "/.*PROPOSAL.*/c\ \ \ \ \ \ \"PROPOSAL\"\ \ \ \ \ \ \ \ :\ $PROPOSAL," app.json
+
+    heading "Enter an email address, without quotes, followed by ENTER."
     echo "This is not required but can be helpful for other users"
     
         read -e -r -p ": " CONTACT_DETAILS
@@ -113,7 +122,7 @@ if grep -q "\"RPC_HOST\"        : \"\"," app.json; then
     echo "Start a direct message with dafty on the ArkEcosystem Slack to get the secret token"
 
         read -e -r -p ": " WS_SECRET
-        sed -i "/.*WS_SECRET.*/c\ \ \ \ \ \ \ \"WS_SECRET\"\ \ \ \ \ \ :\ \"$WS_SECRET\"," app.json
+        sed -i "/.*WS_SECRET.*/c\ \ \ \ \ \ \"WS_SECRET\"\ \ \ \ \ \ :\ \"$WS_SECRET\"," app.json
 fi
 
 success "Configuration complete! Starting ArkStats..."

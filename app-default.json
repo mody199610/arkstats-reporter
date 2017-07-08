@@ -5,7 +5,7 @@
     "log_date_format"   : "YYYY-MM-DD HH:mm Z",
     "merge_logs"        : false,
     "watch"             : false,
-    "max_restarts"      : 20,
+    "max_restarts"      : 1000,
     "exec_interpreter"  : "node",
     "exec_mode"         : "fork_mode",
     "env":
@@ -20,7 +20,8 @@
       "WS_SERVER"       : "http://arkstats.net:2095",
       "WS_SECRET"       : "",
       "VERBOSITY"       : 3,
-      "REPORTERVER"     : "1.1.1"
+      "REPORTERVER"     : "1.1.1",
+      "PROPOSAL"        : ""
     }
   }
 ]
