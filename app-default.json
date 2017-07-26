@@ -12,8 +12,8 @@
     {
       "NODE_ENV"        : "production",
       "RPC_HOST"        : "13.64.199.54",
-      "RPC_PORT"        : "5555",
-      "LISTENING_PORT"  : "2095",
+      "RPC_PORT"        : "2095",
+      "LISTENING_PORT"  : "5555",
       "INSTANCE_NAME"   : "RiseNet",
       "CONTACT_DETAILS" : "",
       "NETWORK_MODE"    : "mainnet",
