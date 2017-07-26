@@ -17,11 +17,10 @@
       "INSTANCE_NAME"   : "",
       "CONTACT_DETAILS" : "",
       "NETWORK_MODE"    : "mainnet",
-      "WS_SERVER"       : "http://arkstats.net:2095",
+      "WS_SERVER"       : "http://13.64.199.54:2095",
       "WS_SECRET"       : "",
       "VERBOSITY"       : 3,
       "REPORTERVER"     : "1.1.1",
-      "PROPOSAL"        : ""
     }
   }
 ]
