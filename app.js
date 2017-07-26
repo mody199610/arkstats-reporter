@@ -4,10 +4,10 @@ var nodeModel = require('./lib/node');
 var node = new nodeModel();
 var gracefulShutdown = function() {
 	console.log('');
-    console.error("ARK", "sys", "Received kill signal, shutting down gracefully.");
+    console.error("RISE", "sys", "Received kill signal, shutting down gracefully.");
 
     node.stop();
-    console.info("ARK", "sys", "Closed node watcher");
+    console.info("RISE", "sys", "Closed node watcher");
 
     setTimeout(function(){
         console.info("xxx", "sys", "Closed out remaining connections.");
