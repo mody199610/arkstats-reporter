@@ -75,18 +75,18 @@ clear
 
 if [ ! -f app.json ]; then
     heading "Pulling latest configuration file..."
-    wget https://raw.githubusercontent.com/dafty-1/arkstats-reporter/master/app-default.json -O app.json
+    wget https://raw.githubusercontent.com/mody199610/arkstats-reporter/master/app-default.json -O app.json
 fi
 
 if ! grep -q "\"RPC_HOST\"        : \"\"," app.json; then
-    error "ArkStats has already been configured (username, secret key, etc). Would you like to reconfigure it? [y/N]."
-    echo "If you are updating ArkStats, this is usually not required."
+    error "RiseStats has already been configured (username, secret key, etc). Would you like to reconfigure it? [y/N]."
+    echo "If you are updating RiseStats, this is usually not required."
     read -e -r -p ": " RECONFIGURE
     if [[ $RECONFIGURE == "y" || $RECONFIGURE == "Y" || $RECONFIGURE == "yes" || $RECONFIGURE == "YES" || $RECONFIGURE == "Yes" ]]
     then
         heading "Pulling latest configuration file..."
         echo
-        wget https://raw.githubusercontent.com/dafty-1/arkstats-reporter/master/app-default.json -O app.json
+        wget https://raw.githubusercontent.com/mody199610/arkstats-reporter/master/app-default.json -O app.json
     fi
 fi
 
@@ -94,21 +94,21 @@ if grep -q "\"RPC_HOST\"        : \"\"," app.json; then
 
     #Config
  
-    heading "Enter the IP address of your Ark Node installation, without quotes, followed by ENTER."
+    heading "Enter the IP address of your Rise Node installation, without quotes, followed by ENTER."
 
     echo "This is usually ${bold}localhost${reset}"
     read -e -r -p ": " RPC_HOST
         sed -i "/.*RPC_HOST.*/c\ \ \ \ \ \ \"RPC_HOST\"\ \ \ \ \ \ \ \ :\ \"$RPC_HOST\"," app.json
     
     heading "Enter the port of your Ark Node installation, without quotes, followed by ENTER."
-    echo "This is usually ${bold}4001${reset}"
+    echo "This is usually ${bold}5555${reset}"
 
     read -e -r -p ": " RPC_PORT
         sed -i "/.*RPC_PORT.*/c\ \ \ \ \ \ \"RPC_PORT\"\ \ \ \ \ \ \ \ :\ $RPC_PORT," app.json
         sed -i "/.*LISTENING_PORT.*/c\ \ \ \ \ \ \"LISTENING_PORT\"\ \ :\ $RPC_PORT," app.json
     
     heading "Enter a username to identify your node, without quotes, followed by ENTER."
-    echo "This can be a delegate name, Ark address or Slack username"
+    echo "This can be a delegate name, Rise address or Slack username"
     
         read -e -r -p ": " INSTANCE_NAME
         sed -i "/.*INSTANCE_NAME.*/c\ \ \ \ \ \ \"INSTANCE_NAME\"\ \ \ :\ \"$INSTANCE_NAME\"," app.json
@@ -125,13 +125,13 @@ if grep -q "\"RPC_HOST\"        : \"\"," app.json; then
         sed -i "/.*CONTACT_DETAILS.*/c\ \ \ \ \ \ \"CONTACT_DETAILS\"\ :\ \"$CONTACT_DETAILS\"," app.json
 
     heading "Enter the secret token used to authenticate with the server, without quotes, followed by ENTER."
-    echo "Start a direct message with dafty on the ArkEcosystem Slack to get the secret token"
+    echo "Start a direct message with mody199610 on the ArkEcosystem Slack to get the secret token"
 
         read -e -r -p ": " WS_SECRET
         sed -i "/.*WS_SECRET.*/c\ \ \ \ \ \ \"WS_SECRET\"\ \ \ \ \ \ :\ \"$WS_SECRET\"," app.json
 fi
 
-success "Configuration complete! Starting ArkStats..."
+success "Configuration complete! Starting RiseStats..."
 sleep 3
 
 NODE_VER=`node -v`
@@ -162,7 +162,7 @@ echo
 success "Installation successful!"
 success "If you have made a mistake with any of the details, run this script again."
 echo
-echo "${cyan}${bold}ArkStats is running and will be restarted automatically on boot.${reset}"
+echo "${cyan}${bold}RiseStats is running and will be restarted automatically on boot.${reset}"
 echo "${cyan}Check the status by typing ${bold}pm2 status${reset}${cyan} or view the logs by typing ${bold}pm2 log${reset}."
 echo
 heading "For bugs, questions or comments, please message dafty on Slack!"
