@@ -100,7 +100,7 @@ if grep -q "\"RPC_HOST\"        : \"\"," app.json; then
     read -e -r -p ": " RPC_HOST
         sed -i "/.*RPC_HOST.*/c\ \ \ \ \ \ \"RPC_HOST\"\ \ \ \ \ \ \ \ :\ \"$RPC_HOST\"," app.json
     
-    heading "Enter the port of your Ark Node installation, without quotes, followed by ENTER."
+    heading "Enter the port of your Rise Node installation, without quotes, followed by ENTER."
     echo "This is usually ${bold}5555${reset}"
 
     read -e -r -p ": " RPC_PORT
@@ -135,7 +135,7 @@ success "Configuration complete! Starting RiseStats..."
 sleep 3
 
 NODE_VER=`node -v`
-sudo env PATH=$PATH:/home/ark/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 unstartup systemd -u $USER --hp /home/$USER
+sudo env PATH=$PATH:/home/rise/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 unstartup systemd -u $USER --hp /home/$USER
 pm2 stop all
 pm2 delete all
 pm2 flush
@@ -146,7 +146,7 @@ pm2 start app.json
 sleep 3
 clear
 
-success "Installing ArkStats on boot..."
+success "Installing RiseStats on boot..."
 sleep 3
 
 sudo env PATH=$PATH:/home/$USER/.nvm/versions/node/$NODE_VER/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
